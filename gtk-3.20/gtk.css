@@ -2566,9 +2566,8 @@ XfdesktopIconView .view {
   XfdesktopIconView .view:active {
     color: #FFFFFF; }
 XfdesktopIconView:active {
-  color: #000000;
-  text-shadow: none;
-  background-color: #CCE8FF; }
+  color: #CCE8FF;
+  background-color: rgba(0, 120, 175, 0.35); }
 
 panel-toplevel.background, panel-toplevel.background menubar {
   background-color: #000000;
@@ -2782,6 +2781,28 @@ wnck-pager {
     background-color: #CCE8FF; }
   wnck-pager:selected {
     background-color: #9bcff9; }
+
+#xfwm-tabwin {
+  padding: 12px;
+  background-image: image(black);
+  background-color: black; /* rgba(0, 0, 0, 0.8);*/
+  color: #ffffff;
+  text-shadow: none;
+  border-radius: 0px;
+  -XfwmTabwinWidget-icon-size: 64px;
+  -XfwmTabwinWidget-preview-size: 128px; }
+  #xfwm-tabwin button {
+    background-image: none;
+    color: #ffffff;
+    text-shadow: none;
+    border: 3px solid transparent;
+    border-radius: 0px;
+    box-shadow: none; }
+    #xfwm-tabwin button:hover {
+      background-color: rgba(255,255,255,0.3); }
+    #xfwm-tabwin button:active, #xfwm-tabwin button:checked, #xfwm-tabwin button:active:hover, #xfwm-tabwin button:checked:hover {
+      border-color: #ffffff; }
+  #xfwm-tabwin .tabwin-app-grid button { min-width: 96px; min-height: 96px; }
 
 .nemo-window .nemo-window-pane widget.entry {
   border: 1px solid;
