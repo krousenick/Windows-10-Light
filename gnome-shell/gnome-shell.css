@@ -951,3 +951,177 @@ StScrollView:focus {
     color: #ef5350;
     font-size: 10pt;
 }
+
+/* ==========================================================================
+ * Additional Transparency Effects (inspired by Aura Glass)
+ * These complement Blur My Shell for the full frosted glass experience
+ * ========================================================================== */
+
+/* OSD (On-Screen Display) - Volume/Brightness popup */
+.osd-window {
+    background-color: rgba(22, 23, 27, 0.75);
+    border-radius: 12px;
+}
+
+.osd-window .level {
+    -barlevel-background-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Workspace switcher */
+.workspace-switcher-container,
+.workspace-switcher {
+    background-color: rgba(32, 32, 32, 0.6);
+    border-radius: 8px;
+}
+
+/* Notification banner - arriving notifications */
+.message.notification-banner {
+    background-color: rgba(22, 23, 27, 0.85) !important;
+    border-radius: 8px;
+}
+
+.message.notification-banner:hover,
+.message.notification-banner:focus {
+    background-color: rgba(30, 31, 38, 0.90) !important;
+}
+
+/* Second/lower notification stack */
+.message:second-in-stack,
+.popup-menu .message:second-in-stack {
+    background-color: rgba(14, 14, 18, 0.60) !important;
+}
+
+.message:lower-in-stack,
+.popup-menu .message:lower-in-stack {
+    background-color: rgba(10, 10, 14, 0.50) !important;
+}
+
+/* Login screen (GDM) background */
+.login-dialog {
+    background-color: transparent;
+}
+
+.login-dialog::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('file:///usr/share/backgrounds/windows10-gdm.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(30px);
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Login user list */
+.login-dialog-auth-list {
+    background-color: rgba(32, 32, 32, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+}
+
+/* App fold dialog */
+.app-folder-dialog {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    border-radius: 16px;
+}
+
+/* Date menu popover */
+.datemenu-popover {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+}
+
+/* Calendar in date menu */
+#calendarArea {
+    background-color: transparent;
+}
+
+/* Message notification group background */
+.message-notification-group {
+    background-color: transparent;
+}
+
+/* Switcher list (alt-tab) */
+.switcher-list {
+    background-color: rgba(32, 32, 32, 0.75);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+}
+
+/* Resize popup */
+.resize-popup {
+    background-color: rgba(32, 32, 32, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+}
+
+/* Dropdown popovers */
+.dropdown-popup,
+.dropdown-content {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+}
+
+/* Background menu */
+.background-menu {
+    background-color: transparent !important;
+}
+
+/* Popover */
+popover {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+}
+
+popover .background-menu {
+    background-color: transparent;
+}
+
+/* Wheel selector */
+.wheel-gradient {
+    background: linear-gradient(transparent, rgba(32, 32, 32, 0.6), transparent);
+}
+
+/* Modal dialog background overlay */
+.modal-dialog-linked-button {
+    border-radius: 4px;
+}
+
+/* Network dialog */
+.nm-dialog {
+    background-color: var(--glass-bg);
+    border-radius: 12px;
+}
+
+/* Bluetooth pairing dialog */
+.bluetooth-pairing-dialog {
+    background-color: var(--glass-bg);
+    border-radius: 12px;
+}
+
+/* Region selection dialog */
+.region-selection-dialog {
+    background-color: var(--glass-bg);
+    border-radius: 12px;
+}
+
+/* Printer dialog */
+.printer-dialog {
+    background-color: var(--glass-bg);
+    border-radius: 12px;
+}
+
+/* Wifi/gps/night light OSDs */
+.world-clock,
+.weather-widget,
+.weather-forecast-icon,
+.location-services-dialog {
+    background-color: var(--glass-bg);
+    border-radius: 8px;
+}
