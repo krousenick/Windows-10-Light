@@ -1,21 +1,30 @@
-/* Windows 10 GNOME Shell Theme
+/* Windows 10/11 GNOME Shell Theme
  * Compatible with GNOME 50+
- * Based on GNOME Shell default theme with Windows 10 styling
+ * Based on GNOME Shell default theme with Windows 10/11 styling
+ * Includes transparency/glass effect like Windows 11 Mica material
  *
  * Author: Updated for GNOME 50 compatibility
  * Original: Christian Medel (Elbullazul)
  */
 
 :root {
-    /* Windows 10 accent colors */
+    /* Windows 10/11 accent colors */
     --windows-accent: #0078d4;
     --windows-accent-hover: #106ebe;
     --windows-accent-light: rgba(0, 120, 212, 0.2);
-    --windows-bg: #1a1a1a;
-    --windows-bg-light: #2d2d2d;
+    --windows-bg: rgba(32, 32, 32, 0.95);
+    --windows-bg-solid: #1a1a1a;
+    --windows-bg-light: rgba(45, 45, 45, 0.95);
+    --windows-bg-transparent: rgba(32, 32, 32, 0.85);
     --windows-fg: #ffffff;
     --windows-fg-secondary: rgba(255, 255, 255, 0.7);
-    --windows-border: rgba(255, 255, 255, 0.2);
+    --windows-border: rgba(255, 255, 255, 0.15);
+    --windows-border-light: rgba(255, 255, 255, 0.08);
+    
+    /* Glass/transparency effects like Windows 11 Mica */
+    --glass-bg: rgba(32, 32, 32, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     
     /* GNOME Shell st-* function fallbacks */
     --st-accent-color: var(--windows-accent);
@@ -29,10 +38,13 @@ stage {
     color: var(--windows-fg);
 }
 
-/* Common Shell Elements */
+/* Common Shell Elements - Windows 11 Style */
 #panel {
-    background-color: var(--windows-bg);
-    height: 32px;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
+    height: 36px;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 #panel .panel-button {
@@ -43,11 +55,14 @@ stage {
     background-color: var(--windows-accent-light);
 }
 
-/* Dash */
+/* Dash - with transparency */
 #dash {
-    background-color: var(--windows-bg);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
     border-radius: 8px;
     padding: 6px;
+    box-shadow: var(--glass-shadow);
 }
 
 #dash .dash-item-container .show-apps,
@@ -219,11 +234,14 @@ StScrollBar StBin#slider {
     color: var(--windows-fg);
 }
 
-/* System Menu */
+/* System Menu - Windows 11 style with transparency */
 .aggregate-menu {
-    background-color: var(--windows-bg-light);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
     border-radius: 8px;
-    border: 1px solid var(--windows-border);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
 .aggregate-menu .popup-menu-item {
@@ -235,9 +253,13 @@ StScrollBar StBin#slider {
 }
 
 /* Quick Settings / System Menu */
+/* Quick Settings - Windows 11 Control Center style */
 .quick-settings {
-    background-color: var(--windows-bg);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
     border-radius: 12px;
+    box-shadow: var(--glass-shadow);
 }
 
 .quick-settings-toggle {
@@ -250,18 +272,24 @@ StScrollBar StBin#slider {
 
 /* Tooltips */
 #tooltip {
-    background-color: var(--windows-bg);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -gtk-backdrop-filter: blur(10px);
     color: var(--windows-fg);
     border-radius: 4px;
     padding: 8px 12px;
-    border: 1px solid var(--windows-border);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Popups and Menus */
+/* Popups and Menus - with glass effect */
 .popup-menu {
-    background-color: var(--windows-bg-light);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
     border-radius: 8px;
-    border: 1px solid var(--windows-border);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
 .popup-menu .popup-menu-item {
@@ -278,9 +306,9 @@ StScrollBar StBin#slider {
     border-radius: 4px;
 }
 
-/* Overview */
+/* Overview - Activities view */
 #overview {
-    background-color: #1a1a1a;
+    background-color: rgba(18, 18, 18, 0.95);
 }
 
 .overview-tile {
@@ -328,9 +356,11 @@ StScrollBar StBin#slider {
     background-color: var(--windows-accent);
 }
 
-/* Login Dialog */
+/* Login Dialog - with transparency */
 .login-dialog {
-    background-color: var(--windows-bg);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    -gtk-backdrop-filter: blur(30px);
 }
 
 .login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item,
@@ -367,8 +397,11 @@ StScrollBar StBin#slider {
 
 /* Message Notifications */
 .message {
-    background-color: var(--windows-bg-light);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -gtk-backdrop-filter: blur(10px);
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .message-notification-group {
@@ -383,19 +416,19 @@ StScrollBar StBin#slider {
 .screenshot-ui-show-pointer-button,
 .screenshot-ui-type-button {
     border-radius: 8px;
-    background-color: var(--windows-bg-light);
-}
-
-.screenshot-ui-show-pointer-button:hover,
-.screenshot-ui-type-button:hover {
-    background-color: var(--windows-accent-light);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -gtk-backdrop-filter: blur(10px);
 }
 
 /* Emoji Picker */
 .emoji-panel {
-    background-color: var(--windows-bg-light);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
     border-radius: 12px;
-    border: 1px solid var(--windows-border);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
 .emoji-page {
@@ -444,15 +477,21 @@ StScrollBar StBin#slider {
 
 /* End Session Dialog */
 .end-session-dialog {
-    background-color: var(--windows-bg);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    -gtk-backdrop-filter: blur(30px);
     border-radius: 12px;
-    border: 1px solid var(--windows-border);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
 /* Audio Device Selection */
 .audio-device-selection-dialog {
-    background-color: var(--windows-bg-light);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -gtk-backdrop-filter: blur(20px);
     border-radius: 12px;
+    box-shadow: var(--glass-shadow);
 }
 
 .audio-selection-box {
