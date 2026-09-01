@@ -49,6 +49,8 @@
     outline-color: alpha(@theme_selected_bg_color, 0.5);
     outline-style: solid;
     outline-offset: 0;
+
+    border-radius: 0;
 }
 
 /***************
