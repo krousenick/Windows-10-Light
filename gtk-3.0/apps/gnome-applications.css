@@ -164,11 +164,17 @@ NautilusQueryEditor .search-bar.toolbar:only-child {
 }
 
 /******************
- * gnome terminal *
+ * gnome terminal (PowerShell style) *
  ******************/
 VteTerminal {
-    background-color: #000000;
+    -VteTerminal-inner-border: 0 1 1 1;
+    background-color: @terminal_bg_color;
     color: @terminal_text_color;
+}
+
+TerminalWindow .header-bar,
+TerminalWindow GtkNotebook.notebook {
+    background-color: @terminal_bg_color;
 }
 
 TerminalWindow GtkNotebook.notebook {
